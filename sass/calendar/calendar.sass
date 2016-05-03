@@ -1,0 +1,47 @@
+@import "../../node_modules/bootstrap/scss/bootstrap"
+@import "../base/variables"
+@import "modificator"
+@import "helper"
+
+.calendar
+	.card-header
+		background: $header
+		@include gradient-vertical($head1, $head2 )
+		color: $white
+		a
+			color: $white
+	max-width: 20rem
+	.fa
+		font-size: 1.5rem
+	.day
+		display: table
+		width: 100%
+		background-color: $colordays
+	.wrapper
+		display: table-row
+		a
+			display: table-cell
+			color: $colordayslink
+			width: 14.2%
+			&.small
+				font-size: .75rem
+				padding-top: .3rem
+				padding-bottom: .3rem
+			&.last-mon
+				color: $last-mon
+				background-color: $bg-last-mon
+	.dd
+		@extend .day
+		background-color: $bg-days
+		a
+			color: $color-days
+			padding: .7rem .4rem
+			border-right: 1px solid $border-day
+			border-top: 1px solid $border-day
+			&:hover,
+			&.active
+				text-decoration: none !important
+				background-color: $colordays
+				color: $white
+			&:last-child
+				border-right: none
